@@ -1,0 +1,26 @@
+.button {
+    display: inline-block;
+    padding: var(--controls-padding);
+    border-radius: var(--controls-border-radius);
+    font-size: var(--controls);
+
+    &--solid {
+        color: var(--secondary-background);
+        background-color: var(--primary);
+        border: 1px solid var(--primary);
+    }
+
+    &:hover {
+        background-color: #2e2e2e;
+    }
+
+    &--outline {
+        color: var(--primary);
+        background-color: var(--secondary-background);
+        border: 1px solid var(--primary);
+
+        &:hover {
+            background-color: #ebebeb;
+        }
+    }
+}
