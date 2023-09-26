@@ -1,4 +1,4 @@
-import { IParsedQuery, IQuery } from "@app/types";
+import { IParsedQuery, IQuery } from "@types";
 
 export default function parser (query: IQuery): IParsedQuery {
     const parsedQuery: IParsedQuery = {

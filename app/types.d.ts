@@ -1,4 +1,6 @@
-export interface PaginatedData<T> {
+import { ComponentPropsWithoutRef } from "react";
+
+interface PaginatedData<T> {
     data: T[],
     pagination: {
         total: number,
@@ -7,18 +9,26 @@ export interface PaginatedData<T> {
     }
 }
 
-export interface IPost {
+interface IPost {
     id: number,
     userId: number,
     title: string,
     body: string
 }
 
-export interface IParsedQuery {
+interface IParsedQuery {
     page: number,
     limit: number
 }
 
-export interface IQuery {
+interface IQuery {
     page: string
+}
+
+interface IButton extends ComponentPropsWithoutRef<"a"> {
+    style?: "solid" | "outline"
+}
+
+interface IUser extends Pick<IPost, "userId"> {
+    name: string
 }

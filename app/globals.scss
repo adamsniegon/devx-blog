@@ -5,6 +5,7 @@
 
 :root {
     --primary: #101010;
+    --primary-hover: #2e2e2e;
     --primary-background: #fbfbfb;
     --secondary: #f1eada;
     --secondary-background: #ffffff;
@@ -14,7 +15,11 @@
     --heading-1: 4rem;
     --heading-2: 3rem;
     --heading-3: 1.5rem;
+    --controls: 1rem;
     --label: 0.875rem;
+
+    --controls-padding: 8px 16px;
+    --controls-border-radius: 6px;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -36,8 +41,17 @@ h1 {
     font-family: "Playfair Display", "sans-serif";
 }
 
+h2 {
+    color: var(--primary);
+}
+
 a {
     text-decoration: none;
+    color: var(--primary);
+}
+
+label {
+    font-size: var(--label);
 }
 
 .container {
