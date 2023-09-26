@@ -3,8 +3,8 @@ import { Playfair_Display, Montserrat } from "next/font/google";
 import Navigation from "@components/navigation/Navigation";
 import "@globals.scss";
 
-const playfairDisplay = Playfair_Display({ subsets: ["latin"], weight: ["400", "700"] });
-const montserrat = Montserrat({ subsets: ["latin"], weight: ["400", "700"] });
+export const playfairDisplay = Playfair_Display({ subsets: ["latin"], weight: ["400", "700"] });
+export const montserrat = Montserrat({ subsets: ["latin"], weight: ["400", "700"] });
 
 export const metadata: Metadata = {
     title: "Create Next App",
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
         <html lang="en">
-            <body className={`${playfairDisplay.className} ${montserrat.className} container`}>
+            <body className={`${montserrat.className} container`}>
                 <Navigation />
                 {children}
             </body>

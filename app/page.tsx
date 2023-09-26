@@ -2,6 +2,7 @@ import { IPost } from "@types";
 import PostItem from "./components/postItem/PostItem";
 import PostList from "./components/postList/PostList";
 import styles from "./home.module.scss";
+import { playfairDisplay } from "./layout";
 
 async function getData(): Promise<IPost[]> {
     const res = await fetch("https://jsonplaceholder.typicode.com/posts");
@@ -18,7 +19,7 @@ export default async function Home() {
 
     return (
         <>
-            <h1 className={styles["headline"]}>
+            <h1 className={`${playfairDisplay.className} ${styles["headline"]}`}>
                 <div className={styles["headline__spanWrapper"]}>
                     <span className={styles["headline__span"]}></span>
                     Daily stories
