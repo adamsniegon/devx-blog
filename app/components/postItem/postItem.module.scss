@@ -1,0 +1,23 @@
+.postItem {
+    &__imageWrapper {
+        height: 250px;
+        position: relative;
+        border-radius: 6px;
+        overflow: hidden;
+        display: block;
+    }
+
+    &__image {
+        object-fit: cover;
+    }
+
+    &__body {
+        margin-top: 8px;
+    }
+
+    &__button {
+        justify-self: flex-start;
+        align-self: flex-end;
+        margin-top: 12px;
+    }
+}
