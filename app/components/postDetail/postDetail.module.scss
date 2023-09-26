@@ -1,0 +1,10 @@
+.postDetail {
+    &__title {
+        margin-top: var(--section-spacing);
+        margin-bottom: 32px;
+    }
+
+    &__author {
+        margin-bottom: var(--section-spacing);
+    }
+}

@@ -1,15 +1,22 @@
+import { montserrat } from "@app/layout";
+import Image from "next/image";
+import Author from "../author/Author";
+import Button from "../button/Button";
 import { IPost } from "@types";
 import styles from "./postDetail.module.scss";
-import Author from "../author/Author";
-import { montserrat } from "@app/layout";
 
 export default async function PostDetail({title, userId, body}: Pick<IPost, "title" | "userId" | "body">) {
     return (
         <>
-            <div>
-                <h1 className={montserrat.className}>{title}</h1>
-                <Author userId={userId}/>
-                <p>{body}</p>
+            <div className="container">
+                <Button href="/" style="outline"><Image src="/arrow-left.svg" alt="Icon back" width={24} height={24} />Back</Button>
+                <h1 className={`${montserrat.className} ${styles["postDetail__title"]}`}>{title}</h1>
+                <Author className={styles["postDetail__author"]} userId={userId}/>
+            </div>
+            <div className="box">
+                <div className="container">
+                    <p>{body}</p>
+                </div>
             </div>
         </>
     )

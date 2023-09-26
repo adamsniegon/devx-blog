@@ -29,6 +29,4 @@ interface IButton extends ComponentPropsWithoutRef<"a"> {
     style?: "solid" | "outline"
 }
 
-interface IUser extends Pick<IPost, "userId"> {
-    name: string
-}
+interface IAuthor extends Pick<IPost, "userId">, ComponentPropsWithoutRef<"div"> {}

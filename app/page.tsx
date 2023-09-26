@@ -19,28 +19,34 @@ export default async function Home() {
 
     return (
         <>
-            <h1 className={`${playfairDisplay.className} ${styles["headline"]}`}>
-                <div className={styles["headline__spanWrapper"]}>
-                    <span className={styles["headline__span"]}></span>
-                    Daily stories
-                </div> for those,<br></br>
-                who stayed&nbsp;
-                <div className={styles["headline__spanWrapper"]}>
-                    <span className={styles["headline__span"]}></span>
-                    hungry and foolish_
+            <div className="container stay">
+                <h1 className={`${playfairDisplay.className} ${styles["headline"]}`}>
+                    <div className={styles["headline__spanWrapper"]}>
+                        <span className={styles["headline__span"]}></span>
+                        Daily stories
+                    </div> for those,<br></br>
+                    who stayed&nbsp;
+                    <div className={styles["headline__spanWrapper"]}>
+                        <span className={styles["headline__span"]}></span>
+                        hungry and foolish_
+                    </div>
+                </h1>
+            </div>
+            <div className="box">
+                <div className="container">
+                    <PostList>
+                        {posts.map((post: IPost) => (
+                            <PostItem
+                                key={post.id}
+                                id={post.id}
+                                userId={post.userId}
+                                title={post.title}
+                                body={post.body}
+                            />
+                        ))}
+                    </PostList>
                 </div>
-            </h1>
-            <PostList>
-                {posts.map((post: IPost) => (
-                    <PostItem
-                        key={post.id}
-                        id={post.id}
-                        userId={post.userId}
-                        title={post.title}
-                        body={post.body}
-                    />
-                ))}
-            </PostList>
+            </div>
         </>
     )
 }

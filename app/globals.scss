@@ -20,6 +20,7 @@
 
     --controls-padding: 8px 16px;
     --controls-border-radius: 6px;
+    --section-spacing: 64px;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -34,14 +35,15 @@
 
 body {
     color: var(--text);
-    background-color: var(--background);
+    background-color: var(--primary-background);
 }
 
 h1 {
     font-size: var(--heading-1);
 }
 
-h1, h2 {
+h1,
+h2 {
     color: var(--primary);
 }
 
@@ -64,4 +66,13 @@ label {
         max-width: map-get($map: $breakpoints, $key: "xl");
         padding: 0px 40px;
     }
+}
+
+.box {
+    min-height: 100vh;
+    margin: 0px 40px var(--section-spacing);
+    padding: var(--section-spacing) 0px;
+    background-color: var(--secondary-background);
+    border-radius: 12px;
+    border: 1px solid #ededed;
 }

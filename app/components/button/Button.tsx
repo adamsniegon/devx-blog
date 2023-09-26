@@ -1,9 +1,7 @@
-import { Montserrat } from "next/font/google";
+import { montserrat } from "@layout";
 import Link from "next/link";
 import { IButton } from "@types";
 import styles from "./button.module.scss";
-
-const montserrat = Montserrat({ subsets: ["latin"], weight: ["400"] });
 
 export default async function Button({
     children,

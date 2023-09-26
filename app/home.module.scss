@@ -8,7 +8,7 @@
 }
 
 .headline {
-    margin: 64px 0px;
+    margin: var(--section-spacing) 0px;
     
     &__spanWrapper {
         display: inline-block;

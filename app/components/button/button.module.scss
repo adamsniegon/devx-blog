@@ -1,5 +1,7 @@
 .button {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
     padding: var(--controls-padding);
     border-radius: var(--controls-border-radius);
     font-size: var(--controls);
