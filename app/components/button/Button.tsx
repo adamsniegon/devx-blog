@@ -19,7 +19,7 @@ export default async function Button({
                 ${montserrat.className}
                 ${styles["button"]}
                 ${styles["button--" + style]}
-                ${className}
+                ${className ?? ""}
             `}
             {...rest}
         >{children}</Link>

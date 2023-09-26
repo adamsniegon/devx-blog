@@ -16,7 +16,7 @@ export default async function Author({ userId }: Pick<IPost, "userId">) {
 
     return (
         <div className={styles["author"]}>
-            <Image className={styles["author__image"]} src={`https://randomuser.me/api/portraits/med/men/${userId}.jpg`} alt="placeholder" width={24} height={24} sizes="100%" />
+            <Image className={styles["author__image"]} src={`https://randomuser.me/api/portraits/med/men/${userId}.jpg`} alt="Profile photo" width={24} height={24} sizes="100%" />
             <label className={styles["author__name"]}>{user.name}</label>
         </div>
     )

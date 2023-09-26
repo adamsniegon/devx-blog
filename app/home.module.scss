@@ -1,0 +1,44 @@
+@keyframes headlineSpanExpand {
+    0% {
+        transform: scaleX(0);
+    }
+    100% {
+        transform: scaleX(1);
+    }
+}
+
+.headline {
+    margin: 64px 0px;
+    
+    &__spanWrapper {
+        display: inline-block;
+        position: relative;
+        white-space: nowrap;
+    }
+
+    &__span {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: -1;
+        top: 0px;
+        left: 0px;
+        display: block;
+        background-color: var(--secondary);
+        padding: 4px;
+        transform-origin: left;
+    }
+
+    &:hover {
+        .headline__span {
+            transform: scaleX(0);
+            animation: headlineSpanExpand 0.8s cubic-bezier(.85,0,.31,1) forwards;
+        }
+
+        .headline__spanWrapper:nth-of-type(2) {
+            .headline__span {
+                animation-delay: 0.5s;
+            }
+        }
+    }
+}
