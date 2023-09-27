@@ -1,22 +1,9 @@
-import { IPost } from "@types";
-import PostItem from "./components/postItem/PostItem";
+import { playfairDisplay } from "@layout";
+import { Suspense } from "react";
 import PostList from "./components/postList/PostList";
 import styles from "./home.module.scss";
-import { playfairDisplay } from "./layout";
-
-async function getData(): Promise<IPost[]> {
-    const res = await fetch("https://jsonplaceholder.typicode.com/posts");
-
-    if (!res.ok) {
-        throw new Error('Failed to fetch data')
-    }
-
-    return res.json()
-}
 
 export default async function Home() {
-    const posts = await getData();
-
     return (
         <>
             <div className="container stay">
@@ -32,21 +19,17 @@ export default async function Home() {
                     </div>
                 </h1>
             </div>
-            <div className="box">
-                <div className="container">
-                    <PostList>
-                        {posts.map((post: IPost) => (
-                            <PostItem
-                                key={post.id}
-                                id={post.id}
-                                userId={post.userId}
-                                title={post.title}
-                                body={post.body}
-                            />
-                        ))}
-                    </PostList>
+            <Suspense fallback={
+                <div className="box">
+                    <div className="container">
+                        <div className={styles["postList"]}>
+                            <p>Loading...</p>
+                        </div>
+                    </div>
                 </div>
-            </div>
+            }>
+                <PostList />
+            </Suspense>
         </>
     )
 }

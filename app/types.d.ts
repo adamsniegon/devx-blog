@@ -1,6 +1,6 @@
 import { ComponentPropsWithoutRef } from "react";
 
-interface PaginatedData<T> {
+interface IPaginatedData<T> {
     data: T[],
     pagination: {
         total: number,
