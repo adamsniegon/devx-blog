@@ -5,7 +5,7 @@ import { IButton } from "@types";
 import styles from "./button.module.scss";
 import { useRouter } from "next/navigation";
 
-export default async function Button({
+export default function Button({
     children,
     href,
     style = "solid",
