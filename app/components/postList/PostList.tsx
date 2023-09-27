@@ -1,33 +1,30 @@
 "use client";
 
+import { useRouter, useSearchParams } from "next/navigation";
 import useSWR from "swr";
+import Pagination from '@mui/material/Pagination';
 import PostItem from "@components/postItem/PostItem";
 import { fetcher } from "@fetcher";
 import { IPaginatedData, IPost } from "@types";
 import styles from "./postList.module.scss";
-import ReactPaginate from "react-paginate";
-import { Suspense, use, useState } from "react";
-import Pagination from '@mui/material/Pagination';
-import Stack from '@mui/material/Stack';
-import { useRouter, useSearchParams } from "next/navigation";
 
 export default function PostList() {
-    // const router = useRouter();
-    // const params = useSearchParams();
-    // const pageFromUrl = Number(params.get("page")) > 0 ? Number(params.get("page")) : 1;
-    const [page, setPage] = useState(1);
+    const router = useRouter();
+    const params = useSearchParams();
+    const page = Number(params.get("page")) > 0 ? Number(params.get("page")) : 1;
     const { data, error, isLoading } = useSWR(`/api/posts?page=${page}`, fetcher<IPaginatedData<IPost>>);
 
-
+    if (error) return <div>failed to load</div>
+    
     const handlePageClick = (event: React.ChangeEvent<unknown>, value: number) => {
-        // router.push(`/?page=${value}`)
-        setPage(value);
+        router.push(`/?page=${value}`)
     }
 
     return (
         <div className="box">
             <div className="container">
                 <div className={styles["postList"]}>
+                        {isLoading && <p>Loading...</p>}
                         {data && data?.data.map((post: IPost) => (
                             <PostItem
                                 key={post.id}

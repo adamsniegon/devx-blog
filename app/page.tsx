@@ -1,5 +1,4 @@
 import { playfairDisplay } from "@layout";
-import { Suspense } from "react";
 import PostList from "./components/postList/PostList";
 import styles from "./home.module.scss";
 
@@ -20,9 +19,7 @@ export default async function Home() {
                     &nbsp;_
                 </h1>
             </div>
-            <Suspense>
-                <PostList />
-            </Suspense>
+            <PostList />
         </>
     )
 }

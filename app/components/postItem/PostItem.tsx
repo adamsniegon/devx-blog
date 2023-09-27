@@ -1,10 +1,12 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
 import Author from "../author/Author";
 import { IPost } from "@types";
 import styles from "./postItem.module.scss";
 
-export default async function PostItem({ id, userId, title, body }: Pick<IPost, "id" | "userId" | "title" | "body">) {
+export default function PostItem({ id, userId, title, body }: Pick<IPost, "id" | "userId" | "title" | "body">) {
     const postLink = `/posts/${id}`;
 
     return (
