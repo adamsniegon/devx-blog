@@ -1,5 +1,5 @@
 import { playfairDisplay } from "@layout";
-import PostList from "./components/postList/PostList";
+import PostList from "@components/postList/PostList";
 import styles from "./home.module.scss";
 
 export default async function Home() {

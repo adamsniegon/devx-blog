@@ -1,10 +1,10 @@
-import { montserrat } from "@app/layout";
+import { Suspense } from "react";
+import { montserrat } from "@layout";
 import Image from "next/image";
-import Author from "../author/Author";
-import Button from "../button/Button";
+import Author from "@components/author/Author";
+import Button from "@components/button/Button";
 import { IPost } from "@types";
 import styles from "./postDetail.module.scss";
-import { Suspense } from "react";
 
 export default async function PostDetail({title, userId, body}: Pick<IPost, "title" | "userId" | "body">) {
     return (
