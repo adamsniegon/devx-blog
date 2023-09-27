@@ -39,7 +39,13 @@ body {
 }
 
 h1 {
-    font-size: var(--heading-1);
+    font-size: calc(var(--heading-1) - 2rem);
+}
+
+@include md {
+    h1 {
+        font-size: var(--heading-1);
+    }
 }
 
 h1,
