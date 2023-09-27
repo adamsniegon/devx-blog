@@ -15,19 +15,12 @@ export default async function Home() {
                     who stayed&nbsp;
                     <div className={styles["headline__spanWrapper"]}>
                         <span className={styles["headline__span"]}></span>
-                        hungry and foolish_
+                        hungry and foolish
                     </div>
+                    &nbsp;_
                 </h1>
             </div>
-            <Suspense fallback={
-                <div className="box">
-                    <div className="container">
-                        <div className={styles["postList"]}>
-                            <p>Loading...</p>
-                        </div>
-                    </div>
-                </div>
-            }>
+            <Suspense>
                 <PostList />
             </Suspense>
         </>

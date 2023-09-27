@@ -1,3 +1,4 @@
+import Button from "@app/components/button/Button";
 import PostDetail from "@components/postDetail/PostDetail";
 import { IPost } from "@types";
 

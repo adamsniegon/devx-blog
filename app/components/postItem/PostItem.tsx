@@ -5,7 +5,7 @@ import { IPost } from "@types";
 import styles from "./postItem.module.scss";
 
 export default async function PostItem({ id, userId, title, body }: Pick<IPost, "id" | "userId" | "title" | "body">) {
-    const postLink = `/blog/${id}`;
+    const postLink = `/posts/${id}`;
 
     return (
         <div className={styles["postItem"]}>

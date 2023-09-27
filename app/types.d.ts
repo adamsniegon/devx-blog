@@ -26,7 +26,8 @@ interface IQuery {
 }
 
 interface IButton extends ComponentPropsWithoutRef<"a"> {
-    style?: "solid" | "outline"
+    style?: "solid" | "outline",
+    back?: boolean
 }
 
 interface IAuthor extends Pick<IPost, "userId">, ComponentPropsWithoutRef<"div"> {}
