@@ -15,7 +15,7 @@ export default function PostList() {
     const { data, error, isLoading } = useSWR(`/api/posts?page=${page}`, fetcher<IPaginatedData<IPost>>);
 
     if (error) return <div>failed to load</div>
-    
+
     const handlePageClick = (event: React.ChangeEvent<unknown>, value: number) => {
         router.push(`/?page=${value}`)
     }
@@ -24,16 +24,16 @@ export default function PostList() {
         <div className="box">
             <div className="container">
                 <div className={styles["postList"]}>
-                        {isLoading && <p>Loading...</p>}
-                        {data && data?.data.map((post: IPost) => (
-                            <PostItem
-                                key={post.id}
-                                id={post.id}
-                                userId={post.userId}
-                                title={post.title}
-                                body={post.body}
-                            />
-                        ))}
+                    {isLoading && <p>Loading...</p>}
+                    {data && data?.data.map((post: IPost) => (
+                        <PostItem
+                            key={post.id}
+                            id={post.id}
+                            userId={post.userId}
+                            title={post.title}
+                            body={post.body}
+                        />
+                    ))}
                 </div>
                 {data && data.pagination &&
                     <Pagination count={data.pagination.pageCount} page={page} onChange={handlePageClick} />
