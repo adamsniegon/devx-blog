@@ -4,7 +4,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 import useSWR from "swr";
 import Pagination from '@mui/material/Pagination';
 import PostItem from "@components/postItem/PostItem";
-import { fetcher } from "@fetcher";
+import { fetcher } from "@utils";
 import { IPaginatedData, IPost } from "@types";
 import styles from "./postList.module.scss";
 

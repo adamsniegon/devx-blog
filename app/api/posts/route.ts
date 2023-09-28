@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import paginate from '@paginate';
+import { paginate } from '@utils';
 import { IPost } from '@types';
 
 export async function GET(request: Request) {

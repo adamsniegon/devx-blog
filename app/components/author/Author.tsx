@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import useSWR from "swr";
-import { fetcher } from "@fetcher";
+import { fetcher } from "@utils";
 import { IAuthor } from "@types";
 import styles from "./author.module.scss";
 
