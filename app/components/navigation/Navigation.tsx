@@ -19,7 +19,7 @@ export default function Navigation() {
                     <Button onClick={() => signIn()}>Log in</Button>
                     :
                     <>
-                        <Button href="/posts/create">Create post</Button>
+                        <Button href="/posts/create">New post</Button>
                         <Button onClick={() => signOut()} style="outline">Log out</Button>
                     </>
                 }
