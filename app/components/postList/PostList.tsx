@@ -7,6 +7,7 @@ import PostItem from "@components/postItem/PostItem";
 import { fetcher } from "@utils";
 import { IPaginatedData, IPost } from "@types";
 import styles from "./postList.module.scss";
+import PostItemSkeleton from "../postItem/PostItemSkeleton";
 
 export default function PostList() {
     const router = useRouter();
@@ -23,7 +24,7 @@ export default function PostList() {
     return (
         <div className="box">
             <div className="container">
-                {isLoading && <p>Loading...</p>}
+                {isLoading && <PostItemSkeleton className="postItem__main" />}
                 {data &&
                     <PostItem
                         key={data.data[0].id}
@@ -35,19 +36,24 @@ export default function PostList() {
                     />
                 }
                 <div className={styles["postList"]}>
+                    {isLoading &&
+                        <>
+                            {Array(9).fill(true).map((_, index) => <PostItemSkeleton key={index} />)}
+                        </>
+                    }
                     {data && data?.data.map((post: IPost, index: number) => (
                         index > 0 &&
-                            <PostItem
-                                key={post.id}
-                                id={post.id}
-                                userId={post.userId}
-                                title={post.title}
-                                body={post.body}
-                            />
+                        <PostItem
+                            key={post.id}
+                            id={post.id}
+                            userId={post.userId}
+                            title={post.title}
+                            body={post.body}
+                        />
                     ))}
                 </div>
                 {data && data.pagination &&
-                    <Pagination count={data.pagination.pageCount} page={page} onChange={handlePageClick} />
+                    <Pagination className={styles["postList__pagination"]} count={data.pagination.pageCount} page={page} onChange={handlePageClick} />
                 }
             </div>
         </div>

@@ -16,7 +16,7 @@ export default function CreatePost() {
 
     const { register, handleSubmit, formState: { errors } } = useForm<IInputs>();
     const onSubmit: SubmitHandler<IInputs> = async formData => {
-        await fetch('/api/posts', {
+        await fetch("https://jsonplaceholder.typicode.com/posts", {
             method: 'POST',
             body: JSON.stringify(formData),
             headers: {
