@@ -23,16 +23,27 @@ export default function PostList() {
     return (
         <div className="box">
             <div className="container">
+                {isLoading && <p>Loading...</p>}
+                {data &&
+                    <PostItem
+                        key={data.data[0].id}
+                        className="postItem__main"
+                        id={data.data[0].id}
+                        userId={data.data[0].userId}
+                        title={data.data[0].title}
+                        body={data.data[0].body}
+                    />
+                }
                 <div className={styles["postList"]}>
-                    {isLoading && <p>Loading...</p>}
-                    {data && data?.data.map((post: IPost) => (
-                        <PostItem
-                            key={post.id}
-                            id={post.id}
-                            userId={post.userId}
-                            title={post.title}
-                            body={post.body}
-                        />
+                    {data && data?.data.map((post: IPost, index: number) => (
+                        index > 0 &&
+                            <PostItem
+                                key={post.id}
+                                id={post.id}
+                                userId={post.userId}
+                                title={post.title}
+                                body={post.body}
+                            />
                     ))}
                 </div>
                 {data && data.pagination &&

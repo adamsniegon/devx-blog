@@ -31,3 +31,8 @@ interface IButton extends ComponentPropsWithoutRef<"a"> {
 }
 
 interface IAuthor extends Pick<IPost, "userId">, ComponentPropsWithoutRef<"div"> {}
+
+interface IInputs {
+    title: string,
+    body: string
+}
